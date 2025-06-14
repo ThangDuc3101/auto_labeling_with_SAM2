@@ -66,8 +66,8 @@ This method gives you more control and is suitable for Windows users.
 
 1.  **Clone the repository and navigate into it:**
     ```bash
-    git clone https://github.com/YourUsername/your-repository-name.git
-    cd your-repository-name
+    https://github.com/ThangDuc3101/auto_labeling_with_SAM2.git
+    cd auto_labeling_with_SAM2
     ```
 
 2.  **Create and activate a virtual environment:**
@@ -102,13 +102,13 @@ The scripts are designed to be used in a sequential workflow. Here is the recomm
 
 ### Step 1: Extract Frames from Videos
 
-Use `video_frame_extractor.py` to convert your raw videos into a collection of images.
+Use `create_dataset.py` to convert your raw videos into a collection of images.
 
 *   **Purpose:** Create a static dataset of images from video footage.
 *   **Command:**
 
     ```bash
-    python video_frame_extractor.py -i path/to/your/videos -o path/to/save/images -f 30 --clean
+    python create_dataset.py -i path/to/your/videos -o path/to/save/images -f 30 --clean
     ```
 
     *   `-i`: Input directory containing your `.mp4`, `.avi`, etc. files.
@@ -118,13 +118,13 @@ Use `video_frame_extractor.py` to convert your raw videos into a collection of i
 
 ### Step 2: Label Your Images
 
-Use `auto_labeling_sam2_refactored.py` for a fast, interactive labeling experience. This script has two phases: initial labeling and a review session.
+Use `auto_labeling_sam2.py` for a fast, interactive labeling experience. This script has two phases: initial labeling and a review session.
 
 *   **Purpose:** Create YOLO-format `.txt` label files for your images.
 *   **Command:**
 
     ```bash
-    python auto_labeling_sam2_refactored.py -i path/to/your/images -o path/to/save/labels --class_id 0
+    python auto_labeling_sam2.py -i path/to/your/images -o path/to/save/labels --class_id 0
     ```
 
     *   `-i`: The directory containing the images you extracted in Step 1.
@@ -134,13 +134,13 @@ Use `auto_labeling_sam2_refactored.py` for a fast, interactive labeling experien
 
 ### Step 3: Split the Dataset and Generate YAML
 
-Finally, use `split_dataset.py` to organize your labeled data into `train` and `val` sets and create the `data.yaml` file required for training.
+Finally, use `split_and_complet_ds.py` to organize your labeled data into `train` and `val` sets and create the `data.yaml` file required for training.
 
 *   **Purpose:** Prepare the final YOLOv8-compatible dataset structure.
 *   **Command:**
 
     ```bash
-    python split_dataset.py -i path/to/your/images -l path/to/your/labels -o path/to/final_dataset -r 0.8 --nc 1 -n person
+    python split_and_complet_ds.py -i path/to/your/images -l path/to/your/labels -o path/to/final_dataset -r 0.8 --nc 1 -n person
     ```
 
     *   `-i`: Your image directory.
