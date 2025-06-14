@@ -41,8 +41,6 @@ Before you begin, ensure you have the following set up:
 
 ## 2. Installation
 
-## 2. Installation
-
 You can set up the project using one of the following methods.
 
 ### Method 1: Using the installation script (Recommended for Linux/macOS)
