@@ -1,0 +1,19 @@
+# Core requirements for the project
+
+# For image and video processing
+opencv-python
+
+# For YOLOv8 and SAM integration
+ultralytics
+
+# For handling YAML configuration files
+pyyaml
+
+# IMPORTANT: PyTorch and related libraries.
+# The following line installs the CPU version of PyTorch.
+# For GPU support, please uninstall these and install the correct version
+# for your CUDA environment from the official Pytorch website:
+# https://pytorch.org/get-started/locally/
+torch
+torchvision
+torchaudio
