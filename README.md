@@ -49,7 +49,7 @@ This automated script will create a virtual environment, detect your hardware (C
 
 1.  **Clone the repository:**
     ```bash
-    https://github.com/ThangDuc3101/auto_labeling_with_SAM2.git
+    git clone https://github.com/ThangDuc3101/auto_labeling_with_SAM2.git
     cd auto_labeling_with_SAM2
     ```
 
